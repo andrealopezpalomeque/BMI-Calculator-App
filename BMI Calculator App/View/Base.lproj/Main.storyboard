@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BMI_Calculator_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="BMIViewController" customModule="BMI_Calculator_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,20 +126,113 @@
                         <outlet property="heightUISlider" destination="Ik9-hj-wqr" id="5g8-80-rMb"/>
                         <outlet property="weightLabel" destination="Wen-BQ-dbj" id="tpo-Cp-1mE"/>
                         <outlet property="weightUISlider" destination="KAQ-mX-wan" id="R3a-bz-hfE"/>
+                        <segue destination="emQ-JX-Fhg" kind="presentation" identifier="showResults" id="LuY-6Z-hLQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75.572519083969468" y="-2.1126760563380285"/>
         </scene>
+        <!--Result View Controller-->
+        <scene sceneID="aca-u1-6oq">
+            <objects>
+                <viewController id="emQ-JX-Fhg" customClass="ResultViewController" customModule="BMI_Calculator_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ec9-OC-Wwa">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue-flip" translatesAutoresizingMaskIntoConstraints="NO" id="x5y-68-H3f">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-114" translatesAutoresizingMaskIntoConstraints="NO" id="F91-By-Qne">
+                                <rect key="frame" x="28" y="274.66666666666669" width="337" height="293.00000000000006"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xWo-gw-Uml">
+                                        <rect key="frame" x="0.0" y="0.0" width="337" height="127.66666666666667"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHG-2I-9Rv">
+                                                <rect key="frame" x="83.666666666666671" y="0.0" width="169.66666666666663" height="95.666666666666671"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="80"/>
+                                                <color key="textColor" systemColor="systemGreenColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are healthy and fit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3i5-GN-q74">
+                                                <rect key="frame" x="73.333333333333329" y="103.66666666666663" width="190.66666666666669" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hAS-nh-tjI">
+                                        <rect key="frame" x="0.0" y="13.666666666666629" width="337" height="341.33333333333331"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chart" translatesAutoresizingMaskIntoConstraints="NO" id="5en-yJ-cfi">
+                                                <rect key="frame" x="0.0" y="0.0" width="337" height="341.33333333333331"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UId-4Q-IF1">
+                                        <rect key="frame" x="0.0" y="240.99999999999994" width="337" height="52"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="et0-bh-T0S">
+                                                <rect key="frame" x="0.0" y="0.0" width="337" height="52"/>
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="52" id="f9w-3t-BBu"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="RECALCULATE">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="recalculatePressed:" destination="emQ-JX-Fhg" eventType="touchUpInside" id="S5C-p3-pIe"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="b6s-Ix-XW1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="x5y-68-H3f" secondAttribute="bottom" id="6Qa-F2-xe0"/>
+                            <constraint firstItem="b6s-Ix-XW1" firstAttribute="trailing" secondItem="F91-By-Qne" secondAttribute="trailing" constant="28" id="6aq-5U-4aM"/>
+                            <constraint firstItem="x5y-68-H3f" firstAttribute="leading" secondItem="b6s-Ix-XW1" secondAttribute="leading" id="AHT-Sb-Bjl"/>
+                            <constraint firstItem="F91-By-Qne" firstAttribute="centerX" secondItem="ec9-OC-Wwa" secondAttribute="centerX" id="D25-oy-WLv"/>
+                            <constraint firstItem="x5y-68-H3f" firstAttribute="top" secondItem="ec9-OC-Wwa" secondAttribute="top" id="HDD-FW-uKz"/>
+                            <constraint firstItem="x5y-68-H3f" firstAttribute="trailing" secondItem="b6s-Ix-XW1" secondAttribute="trailing" id="M6W-ch-BML"/>
+                            <constraint firstItem="F91-By-Qne" firstAttribute="centerY" secondItem="ec9-OC-Wwa" secondAttribute="centerY" id="UT9-gp-5d5"/>
+                            <constraint firstItem="F91-By-Qne" firstAttribute="leading" secondItem="b6s-Ix-XW1" secondAttribute="leading" constant="28" id="jHh-Zw-uUH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="adviceLabel" destination="3i5-GN-q74" id="PRi-Yw-TdA"/>
+                        <outlet property="bmiValue" destination="BHG-2I-9Rv" id="B7L-Sn-STU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="INL-pe-Zwe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="771.75572519083971" y="-2.1126760563380285"/>
+        </scene>
     </scenes>
     <resources>
         <image name="blue" width="375" height="812"/>
+        <image name="blue-flip" width="375" height="812"/>
+        <image name="chart" width="341.33334350585938" height="341.33334350585938"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

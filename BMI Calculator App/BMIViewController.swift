@@ -7,7 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class BMIViewController: UIViewController {
+    
+    var calculateBMI = CalculateBMI()
 
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var heightLabel: UILabel!
@@ -34,10 +36,25 @@ class ViewController: UIViewController {
         let weight = weightUISlider.value
         let height = heightUISlider.value
         
+        calculateBMI.calculateBMI(weight: weight, height: height)
+        //let bmi = weight / pow(height, 2)
         
-        let bmi = weight / pow(height, 2)
+        //change screen
+        self.performSegue(withIdentifier: "showResults", sender: self)
         
-        print(bmi)
+    }
+    //paso la data a la siguiente pantalla
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "showResults" {
+            let resultVC = segue.destination as! ResultViewController
+            //sending the values for ResultViewController
+            resultVC.bmiVal = calculateBMI.getBMIValue()
+            resultVC.colorText = calculateBMI.getColor()
+            resultVC.adviceText = calculateBMI.getAdvice()
+        }
     }
 }
 
