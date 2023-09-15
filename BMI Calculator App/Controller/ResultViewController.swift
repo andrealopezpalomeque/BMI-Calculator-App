@@ -25,7 +25,7 @@ class ResultViewController: UIViewController {
         adviceLabel.text = adviceText
         bmiValue.textColor = colorText
         
-        print(adviceLabel ?? "sdf")
+        print(adviceLabel.text ?? "sdf")
         
     }
     

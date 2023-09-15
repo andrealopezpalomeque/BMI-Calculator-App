@@ -62,15 +62,14 @@
 		4F5AD7DF2AB3D7C400C143E8 /* BMI Calculator App */ = {
 			isa = PBXGroup;
 			children = (
+				4F5AD7FC2AB3FD2600C143E8 /* Controller */,
 				4F5AD7F52AB3F1A400C143E8 /* Model */,
 				4F5AD7E02AB3D7C400C143E8 /* AppDelegate.swift */,
 				4F5AD7E22AB3D7C400C143E8 /* SceneDelegate.swift */,
-				4F5AD7E42AB3D7C400C143E8 /* BMIViewController.swift */,
 				4F5AD7F42AB3F19100C143E8 /* View */,
 				4F5AD7E92AB3D7C500C143E8 /* Assets.xcassets */,
 				4F5AD7EB2AB3D7C500C143E8 /* LaunchScreen.storyboard */,
 				4F5AD7EE2AB3D7C500C143E8 /* Info.plist */,
-				4F5AD7F62AB3F23900C143E8 /* ResultViewController.swift */,
 			);
 			path = "BMI Calculator App";
 			sourceTree = "<group>";
@@ -90,6 +89,15 @@
 				4F5AD7FA2AB3F50B00C143E8 /* CalculateBMI.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4F5AD7FC2AB3FD2600C143E8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4F5AD7E42AB3D7C400C143E8 /* BMIViewController.swift */,
+				4F5AD7F62AB3F23900C143E8 /* ResultViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
