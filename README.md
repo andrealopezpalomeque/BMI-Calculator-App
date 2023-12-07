@@ -11,7 +11,7 @@ The BMI Calculator App offers the following features:
 
 ## Key Skills and Concepts Learned 🧠
 
-During the development of the BMI Calculator App, you will gain experience in the following key skills and concepts:
+Throughout the development of this app, I gained experience in the following key skills and concepts:
 
 - Creating multi-screen apps with animated navigation.
 - Utilizing optional binding, optional chaining, and the nil coalescing operator.
